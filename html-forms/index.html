@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Forms</title>
+</head>
+<body>
+  <h1>
+    Coding Form!
+  </h1>
+  <form action="" method="POST">
+    <div>
+    <label for="email">
+      <p>Email</p>
+      <input type="email" name="email" id="email" />
+    </label>
+    </div>
+    <div>
+      <p>Why is coding cool?</p>
+      <select name="whyIs">
+        <label>
+          <option value="select" selected="selected">Select an option</option>
+        </label>
+        <label>
+          <option value="interesting">Because it&apos;s interesting</option>
+        </label>
+        <label>
+          <option value="fun">Because it&apos;s fun</option>
+        </label>
+        <label>
+        <option value="powerful">Because it&apos;s powerful</option>
+        </label>
+      </select>
+    </div>
+    <div>
+        <p>Favorite Language (choose one)</p>
+        <label>
+          <input type="radio" name="language" value="HTML" /> HTML
+        </label>
+        <label>
+          <input type="radio" name="language" value="CSS" /> CSS
+        </label>
+        <label>
+          <input type="radio" name="language" value="JS" /> JavaScript
+        </label>
+    </div>
+    <div>
+      <label for="info">
+        <p>Would you like to sign up for more information?</p>
+        <!-- this is a little more realistic, huh? -->
+        <input type="checkbox" name="signup" value="signedup" checked="checked" id="info" /> Sign me up!
+      </label>
+    </div>
+    <div>
+      <label for="comments">
+        <p>Comments:</p>
+        <textarea name="comments" cols="20" rows="8" id="comments">
+          Type your comments here...
+        </textarea>
+      </label>
+    </div>
+    <div>
+      <input type="submit" name="submit" value="submit" />
+    </div>
+  </form>
+</body>
+</html>
