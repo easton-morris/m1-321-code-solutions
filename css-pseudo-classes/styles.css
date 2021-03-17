@@ -1,0 +1,25 @@
+button {
+  height: 200px;
+  width: 200px;
+}
+
+button:hover {
+  background-color: skyblue;
+}
+
+table {
+  border: black;
+}
+
+th {
+  background-color: black;
+  color: whitesmoke;
+}
+
+tr:nth-child(even) {
+  background-color: lightgrey;
+}
+
+tr:nth-child(odd) {
+  background-color: pink;
+}
