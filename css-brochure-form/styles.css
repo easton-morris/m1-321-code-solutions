@@ -1,0 +1,74 @@
+@font-face {
+  font-family: 'AtlasGrotesk-Light';
+  src: url(AtlasGrotesk-Light-Web.woff2) format('woff2');
+}
+
+@font-face {
+  font-family: 'BrandonGrotesque-Regular';
+  src: url(BrandonGrotesque-Regular.woff2) format('woff2');
+}
+
+body {
+  font-family: 'AtlasGrotesk-Light', sans-serif;
+}
+
+.form-center {
+  display: flex;
+  justify-content: center;
+  margin-left: 33.3%;
+  margin-right: 33.3%;
+}
+
+fieldset {
+  border: none;
+  width: 50%;
+}
+
+input {
+  justify-content: center;
+  border-radius: 3px;
+  width: 300px;
+  height: 30px;
+}
+
+.heading {
+  font-family: 'BrandonGrotesque-Regular', sans-serif;
+  color: orangered;
+  letter-spacing: 0.25em;
+}
+
+.heading-center {
+  text-align: center;
+}
+
+.label-style {
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 2px;
+  font-size: x-small;
+  font-weight: 900;
+}
+
+select {
+  background-color: lightgray;
+  border-radius: 3px;
+  width: 300px;
+  height: 30px;
+}
+
+option {
+  color: black;
+}
+
+::placeholder {
+  color: grey;
+}
+
+button {
+  background-color: orangered;
+  color: white;
+  font-family: 'BrandonGrotesque-Regular', sans-serif;
+  border-radius: 50%;
+  justify-content: right;
+  margin: 10px;
+}
