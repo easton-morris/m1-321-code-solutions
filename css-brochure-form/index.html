@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CSS Challenge - Brochure Form</title>
+  <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" type="font" href="BrandonGrotesque-Regular.woff2">
+  <link rel="stylesheet" type="font" href="AtlasGrotesk-Light-Web.woff2">
+</head>
+<body>
+  <h2 class="heading-center heading">
+    LEARN MORE
+  </h2>
+  <form action="" method="POST" class="form-center">
+    <fieldset>
+      <div>
+        <p class="label-style">
+          <label for="email">COMPANY EMAIL</label>
+        </p>
+        <input type="text" name="email" id="email" placeholder="sally@company.co" required>
+      </div>
+      <div>
+        <p class="label-style">
+          <label for="name">NAME</label>
+        </p>
+        <input type="text" name="name" id="name" placeholder="Sally Smith" required>
+      </div>
+      <div>
+        <p class="label-style">
+          <label for="location">WHERE ARE YOU HIRING?</label>
+        </p>
+        <input type="text" name="location" id="location" placeholder="City, County" required>
+      </div>
+      <div>
+        <p class="label-style">
+          <label for="quantity">HOW MANY ENGINEERS ARE YOU HIRING IN THE NEXT 6 MOTNHS?</label>
+        </p>
+        <select name="quantity" id="quantity" required>
+          <option value="1-2">1-2 Engineers</option>
+          <option value="3-4">3-4 Engineers</option>
+          <option value="5-6">5-6 Engineers</option>
+        </select>
+      </div>
+      <div class="button">
+        <button type="submit" value="submit">SUBMIT</button>
+      </div>
+    </fieldset>
+  </form>
+</body>
+</html>
