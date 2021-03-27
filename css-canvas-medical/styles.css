@@ -1,0 +1,133 @@
+body {
+  font-family: Avenir, sans-serif;
+}
+
+.grey-text {
+  color: #a1a1a1;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.container {
+  width: 1000px;
+  margin: auto;
+}
+
+.row {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  border-width: 2px;
+  border-style: none none solid none;
+  border-color: #f1f2f4;
+  height: 70px;
+  align-items: center;
+  justify-content: left;
+}
+
+.logo {
+  width: 270px;
+  height: 52px;
+}
+
+.header-crumb {
+  background: none;
+  border-style: none;
+}
+
+header > button {
+  white-space: nowrap;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.blue-button {
+  border-radius: 5%;
+  background-color: #294464;
+  color: #fff;
+  border-style: none;
+}
+
+.header > .logo {
+  margin-right: 150px;
+  position: relative;
+  left: 30px;
+}
+
+.hero-image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+div.hero-image {
+  position: relative;
+  margin-right: 100px;
+  margin-left: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.hero-image {
+  height: 450px;
+  width: 800px;
+  filter: brightness(87%);
+}
+
+.hero-image-text {
+  position: absolute;
+  width: 400px;
+  left: 150px;
+  line-height: 1.5rem;
+}
+
+.hero-image-text > h1 {
+  font-family: Tiempos Headline, serif;
+  letter-spacing: 0.15rem;
+}
+
+.hero-image-text > .blue-button {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-size: 1.1rem;
+}
+
+.location-info {
+  background-color: #fafafa;
+  text-align: center;
+  height: 500px;
+}
+
+.location-info > h2 {
+  font-family: Tiempos Headline, serif;
+  color: #6e6e6e;
+  padding-top: 60px;
+}
+
+.location-info > p {
+  padding-left: 280px;
+  padding-right: 280px;
+  margin-bottom: 60px;
+}
+
+.two-columns-list {
+  list-style-type: none;
+  columns: 2;
+}
+
+.two-columns-list > li {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
