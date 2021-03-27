@@ -103,3 +103,31 @@ div.hero-image {
   padding-right: 30px;
   font-size: 1.1rem;
 }
+
+.location-info {
+  background-color: #fafafa;
+  text-align: center;
+  height: 500px;
+}
+
+.location-info > h2 {
+  font-family: Tiempos Headline, serif;
+  color: #6e6e6e;
+  padding-top: 60px;
+}
+
+.location-info > p {
+  padding-left: 280px;
+  padding-right: 280px;
+  margin-bottom: 60px;
+}
+
+.two-columns-list {
+  list-style-type: none;
+  columns: 2;
+}
+
+.two-columns-list > li {
+  font-weight: 600;
+  margin-bottom: 30px;
+}
