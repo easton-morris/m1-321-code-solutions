@@ -1,0 +1,81 @@
+@font-face {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: smaller;
+}
+
+.container {
+  width: 1100px;
+  margin: auto;
+}
+
+.row {
+  margin: 0;
+}
+
+.main-header {
+  text-align: center;
+}
+
+.shopping-items {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.col-2 {
+  width: 200px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 500px;
+}
+
+.box {
+  display: flex;
+  overflow: hidden;
+  justify-content: flex-start;
+  width: 200px;
+  height: 300px;
+}
+
+.prod-image {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.product-brand-size {
+  color: black;
+}
+
+.size {
+  color: #d3d3d3;
+}
+
+.border-deco {
+  background-color: #fff2e7;
+  border-style: hidden;
+  border-radius: 3px;
+}
+
+.retail {
+  background-color: #fff;
+  color: #d3d3d3;
+}
+
+.empty {
+  background-color: #fff;
+}
