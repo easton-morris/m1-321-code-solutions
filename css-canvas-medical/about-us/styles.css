@@ -80,3 +80,49 @@ header > button {
   position: relative;
   left: 30px;
 }
+
+.hero-image-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero-image-container {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 900px;
+  height: 450px;
+}
+
+.hero-image {
+  width: 900px;
+  filter: brightness(87%);
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.hero-image-text {
+  position: absolute;
+  width: 400px;
+  left: 100px;
+  line-height: 1.5rem;
+}
+
+.hero-image-text > h1 {
+  font-family: Tiempos Headline, serif;
+  font-size: 1.8rem;
+  line-height: 2.25rem;
+  font-weight: lighter;
+}
+
+.hero-image-text > p {
+  font-size: 0.78rem;
+  line-height: 1.2rem;
+}
