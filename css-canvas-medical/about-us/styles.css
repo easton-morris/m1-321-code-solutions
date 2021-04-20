@@ -76,7 +76,7 @@ header > button {
 }
 
 .header > .logo {
-  margin-right: 250px;
+  margin-right: 300px;
   position: relative;
   left: 30px;
 }
@@ -125,4 +125,39 @@ header > button {
 .hero-image-text > p {
   font-size: 0.78rem;
   line-height: 1.2rem;
+}
+
+.mission-statement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-statement-text {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mission-statement-text > h1 {
+  color: #2b2c2e;
+  font-family: Tiempos Headline, serif;
+  font-size: 1.8rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+  margin: 10px;
+}
+
+.mission-statement-text > p {
+  color: #2b2c2e;
+  font-size: 0.78rem;
+  line-height: 1.2rem;
+}
+
+.mission-statement-text > a.link-text {
+  color: #294464;
+  font-size: 0.78rem;
+  line-height: 1.2rem;
+  font-weight: bold;
 }
