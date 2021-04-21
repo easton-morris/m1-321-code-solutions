@@ -1,0 +1,38 @@
+.container {
+  margin: 0;
+  width: 100vh;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lit {
+  background-color: #fbf0c9;
+}
+
+.dark {
+  background-color: #3b3b3a;
+}
+
+button {
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+}
+
+.switched-on {
+  background-color: #f0c734;
+  border-style: hidden;
+  box-shadow: 2px 0 4px #4d3e06;
+}
+
+.switched-off {
+  background-color: #828280;
+  border-style: hidden;
+  box-shadow: 2px 0 4px #fff;
+}
+
+button:focus {
+  outline: none;
+}
