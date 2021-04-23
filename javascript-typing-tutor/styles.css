@@ -35,8 +35,8 @@
   position: absolute;
   top: 35%;
   left: 35%;
-  width: 500px;
-  height: 300px;
+  width: 400px;
+  height: 200px;
   background-color: lightblue;
   border-radius: 15px;
   border-style: solid;
@@ -55,6 +55,7 @@
 }
 
 .reset {
+  cursor: pointer;
   text-align: center;
   width: 200px;
   height: 100px;
@@ -64,7 +65,8 @@
   background-color: lightsalmon;
   color: white;
   position: relative;
-  left: 25%;
+  left: 20%;
+  bottom: 12%;
 }
 
 .hidden {
@@ -92,5 +94,5 @@
 }
 
 .current {
-  text-decoration: underline black;
+  border-bottom: 3px solid black;
 }
