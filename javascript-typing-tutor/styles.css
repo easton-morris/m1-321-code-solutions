@@ -3,6 +3,10 @@
   box-sizing: border-box;
 }
 
+@keyframes blink {
+  50% { border-bottom: none; }
+}
+
 .tutor-container {
   margin: auto 0;
   display: flex;
@@ -12,9 +16,14 @@
 }
 
 .tutor-char {
+  display: inline-block;
+  width: 1.5rem;
+  height: 2rem;
   font-size: x-large;
   font-weight: bold;
   margin: 2px;
+  text-align: center;
+  animation: blink 0.5s step-end infinite alternate;
 }
 
 .modal-container {
