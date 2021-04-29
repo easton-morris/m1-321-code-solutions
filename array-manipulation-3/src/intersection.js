@@ -15,36 +15,30 @@ function intersection(first, second) {
     newArray.push(second[j]);
   }
 
-  /* ditch the unique values */
+  /* ditch the unique values by only passing on the dupes */
 
-  var check2 = true;
+  var finalArray = [];
+  var compArray = newArray;
 
-  for (var k = 0; k < newArray.length; k++) {
-    if (newArray.length > 1) {
-      for (var p = 0; p < newArray.length; p++) {
-        if (k !== p && newArray[k] === newArray[p]) {
-          check2 = false;
-        }
+  for (var r = 0; r < newArray.length; r++) {
+    for (var t = 0; t < compArray.length; t++) {
+      if (r !== t && newArray[r] === compArray[t]) {
+        finalArray.push(newArray[r]);
       }
-    }
-    if (check2 === true) {
-      newArray.splice(newArray[k]);
-    } else {
-      check2 = true;
     }
   }
 
-  /* ditch the duplicate values */
+  /* ditch the duplicate dupes */
 
-  for (var m = 0; m < newArray.length; m++) {
-    if (newArray.length > 1) {
-      for (var n = 0; n < newArray.length; n++) {
-        if (m !== n && newArray[m] === newArray[n]) {
-          newArray.splice(newArray[n]);
+  for (var m = 0; m < finalArray.length; m++) {
+    if (finalArray.length > 1) {
+      for (var n = 0; n < finalArray.length; n++) {
+        if (m !== n && finalArray[m] === finalArray[n]) {
+          finalArray.splice(n, 1);
         }
       }
     }
   }
 
-  return newArray;
+  return finalArray;
 }
