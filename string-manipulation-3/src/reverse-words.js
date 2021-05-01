@@ -1,29 +1,26 @@
 /* exported reverseWords */
 
 function reverseWords(string) {
-  var noComma = string.replaceAll(',', '');
-  var splitString = noComma.split(' ');
+
+  var splitString = string.split(' ');
 
   for (var i = 0; i < splitString.length; i++) {
-    var stringArray = Array.from(splitString[i]);
-
-    stringArray.reverse();
-
-    var revStringPre = stringArray.toString();
-    var revString = revStringPre.replaceAll(',', '');
-    splitString[i] = revString;
-
+    var newWord = '';
+    for (var j = (splitString[i].length - 1); j >= 0; j--) {
+      newWord += splitString[i][j];
+    }
+    splitString[i] = newWord;
   }
 
-  var revStringPre2 = splitString.toString();
-  splitString = revStringPre2.replaceAll(',', ' ');
+  var newString = '';
 
-  /* im already the worst kind of software engineer LMAO
-     ill rewrite this, I just wanted you to see it first */
-
-  if (splitString.includes('olleH') === true) {
-    splitString = splitString.padStart((splitString.length + 1), ',');
+  for (var k = 0; k < splitString.length; k++) {
+    if (k < (splitString.length - 1)) {
+      newString += splitString[k] + ' ';
+    } else {
+      newString += splitString[k];
+    }
   }
 
-  return splitString;
+  return newString;
 }
