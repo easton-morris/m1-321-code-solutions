@@ -235,49 +235,86 @@ var deck = [
 ];
 
 var $shuffledDeck = _.shuffle(deck);
-var $shuffledDeck2 = _.shuffle(deck);
 
 var cardPull = 0;
 var pulledCard;
 
 for (var i = 0; i < players.length; i++) {
-  cardPull = _.random(51);
-  console.log(cardPull);
+  cardPull = _.random($shuffledDeck.length - 1);
   pulledCard = $shuffledDeck[cardPull];
   players[i].hand.push(pulledCard);
-  $shuffledDeck.splice(pulledCard, 1);
+  $shuffledDeck.splice(cardPull, 1);
 }
 for (var j = 0; j < players.length; j++) {
-  cardPull = _.random(51);
-  console.log(cardPull);
-  pulledCard = $shuffledDeck2[cardPull];
-  players[i].hand.push(pulledCard);
-  $shuffledDeck2.splice(pulledCard, 1);
+  cardPull = _.random($shuffledDeck.length - 1);
+  pulledCard = $shuffledDeck[cardPull];
+  players[j].hand.push(pulledCard);
+  $shuffledDeck.splice(cardPull, 1);
 }
 
 var score = 0;
 
 for (var k = 0; k < players.length; k++) {
-  if (players[k].hand[0] === 'Ace') {
+  if (players[k].hand[0].rank === 'Ace') {
     score += 11;
-  } else if (players[k].hand[0] === 'Two') {
-    score += 11;
-  } else if (players[k].hand[0] === 'Three') {
-    score += 11;
-  } else if (players[k].hand[0] === 'Four') {
-    score += 11;
-  } else if (players[k].hand[0] === 'Five') {
-    score += 11;
-  } else if (players[k].hand[0] === 'Six') {
-    score += 11;
-  } else if (players[k].hand[0] === 'Seven') {
-    score += 11;
-  } else if (players[k].hand[0] === 'Eight') {
-    score += 11;
-  } else if (players[k].hand[0] === 'Nine') {
-    score += 11;
-  } else if (players[k].hand[0] === 'Ten') {
-    score += 11;
+  } else if (players[k].hand[0].rank === 'Two') {
+    score += 2;
+  } else if (players[k].hand[0].rank === 'Three') {
+    score += 3;
+  } else if (players[k].hand[0].rank === 'Four') {
+    score += 4;
+  } else if (players[k].hand[0].rank === 'Five') {
+    score += 5;
+  } else if (players[k].hand[0].rank === 'Six') {
+    score += 6;
+  } else if (players[k].hand[0].rank === 'Seven') {
+    score += 7;
+  } else if (players[k].hand[0].rank === 'Eight') {
+    score += 8;
+  } else if (players[k].hand[0].rank === 'Nine') {
+    score += 9;
+  } else if (players[k].hand[0].rank === 'Ten' || players[k].hand[0].rank === 'Jack' ||
+    players[k].hand[0].rank === 'Queen' || players[k].hand[0].rank === 'King') {
+    score += 10;
   }
-  players[k].score = score;
+  players[k].score += score;
+  score = 0;
 }
+
+for (var m = 0; m < players.length; m++) {
+  if (players[m].hand[1].rank === 'Ace') {
+    score += 11;
+  } else if (players[m].hand[1].rank === 'Two') {
+    score += 2;
+  } else if (players[m].hand[1].rank === 'Three') {
+    score += 3;
+  } else if (players[m].hand[1].rank === 'Four') {
+    score += 4;
+  } else if (players[m].hand[1].rank === 'Five') {
+    score += 5;
+  } else if (players[m].hand[1].rank === 'Six') {
+    score += 6;
+  } else if (players[m].hand[1].rank === 'Seven') {
+    score += 7;
+  } else if (players[m].hand[1].rank === 'Eight') {
+    score += 8;
+  } else if (players[m].hand[1].rank === 'Nine') {
+    score += 9;
+  } else if (players[m].hand[1].rank === 'Ten' || players[m].hand[1].rank === 'Jack' ||
+    players[m].hand[1].rank === 'Queen' || players[m].hand[1].rank === 'King') {
+    score += 10;
+  }
+  players[m].score += score;
+  score = 0;
+}
+
+var winner = 0;
+
+for (var n = 1; n < players.length; n++) {
+  if (players[n].score >= players[0].score && players[n].score >= players[1].score &&
+    players[n].score >= players[2].score && players[n].score >= players[3].score) {
+    winner = n;
+  }
+}
+
+console.log('Winner:', players[winner]);
