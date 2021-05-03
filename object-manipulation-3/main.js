@@ -3,19 +3,23 @@ console.log('Lodash is loaded:', typeof _ !== 'undefined');
 var players = [
   {
     name: 'Steve',
-    hand: []
+    hand: [],
+    score: 0
   },
   {
     name: 'Dave',
-    hand: []
+    hand: [],
+    score: 0
   },
   {
     name: 'Kevin',
-    hand: []
+    hand: [],
+    score: 0
   },
   {
     name: 'William',
-    hand: []
+    hand: [],
+    score: 0
   }
 ];
 
@@ -230,17 +234,50 @@ var deck = [
   }
 ];
 
+var $shuffledDeck = _.shuffle(deck);
+var $shuffledDeck2 = _.shuffle(deck);
+
 var cardPull = 0;
 var pulledCard;
+
 for (var i = 0; i < players.length; i++) {
   cardPull = _.random(51);
   console.log(cardPull);
-  pulledCard = deck[cardPull];
+  pulledCard = $shuffledDeck[cardPull];
   players[i].hand.push(pulledCard);
+  $shuffledDeck.splice(pulledCard, 1);
 }
 for (var j = 0; j < players.length; j++) {
   cardPull = _.random(51);
   console.log(cardPull);
-  pulledCard = deck[cardPull];
-  players[j].hand.push(pulledCard);
+  pulledCard = $shuffledDeck2[cardPull];
+  players[i].hand.push(pulledCard);
+  $shuffledDeck2.splice(pulledCard, 1);
+}
+
+var score = 0;
+
+for (var k = 0; k < players.length; k++) {
+  if (players[k].hand[0] === 'Ace') {
+    score += 11;
+  } else if (players[k].hand[0] === 'Two') {
+    score += 11;
+  } else if (players[k].hand[0] === 'Three') {
+    score += 11;
+  } else if (players[k].hand[0] === 'Four') {
+    score += 11;
+  } else if (players[k].hand[0] === 'Five') {
+    score += 11;
+  } else if (players[k].hand[0] === 'Six') {
+    score += 11;
+  } else if (players[k].hand[0] === 'Seven') {
+    score += 11;
+  } else if (players[k].hand[0] === 'Eight') {
+    score += 11;
+  } else if (players[k].hand[0] === 'Nine') {
+    score += 11;
+  } else if (players[k].hand[0] === 'Ten') {
+    score += 11;
+  }
+  players[k].score = score;
 }
