@@ -1,6 +1,6 @@
 console.log('Lodash is loaded:', typeof _ !== 'undefined');
 
-var players = [
+var playerList = [
   {
     name: 'Steve',
     hand: [],
@@ -234,87 +234,104 @@ var deck = [
   }
 ];
 
-var $shuffledDeck = _.shuffle(deck);
+function playGame(players, handSize) {
+  var $shuffledDeck = _.shuffle(deck);
+  var tiebreaker = false;
+  var ties = [];
+  var tiedPlayers = [];
+  var newList = [];
+  var cardPull = 0;
+  var pulledCard = {};
+  var winner = 0;
+  var score = 0;
+  var highestScore = 0;
 
-var cardPull = 0;
-var pulledCard;
-
-for (var i = 0; i < players.length; i++) {
-  cardPull = _.random($shuffledDeck.length - 1);
-  pulledCard = $shuffledDeck[cardPull];
-  players[i].hand.push(pulledCard);
-  $shuffledDeck.splice(cardPull, 1);
-}
-for (var j = 0; j < players.length; j++) {
-  cardPull = _.random($shuffledDeck.length - 1);
-  pulledCard = $shuffledDeck[cardPull];
-  players[j].hand.push(pulledCard);
-  $shuffledDeck.splice(cardPull, 1);
-}
-
-var score = 0;
-
-for (var k = 0; k < players.length; k++) {
-  if (players[k].hand[0].rank === 'Ace') {
-    score += 11;
-  } else if (players[k].hand[0].rank === 'Two') {
-    score += 2;
-  } else if (players[k].hand[0].rank === 'Three') {
-    score += 3;
-  } else if (players[k].hand[0].rank === 'Four') {
-    score += 4;
-  } else if (players[k].hand[0].rank === 'Five') {
-    score += 5;
-  } else if (players[k].hand[0].rank === 'Six') {
-    score += 6;
-  } else if (players[k].hand[0].rank === 'Seven') {
-    score += 7;
-  } else if (players[k].hand[0].rank === 'Eight') {
-    score += 8;
-  } else if (players[k].hand[0].rank === 'Nine') {
-    score += 9;
-  } else if (players[k].hand[0].rank === 'Ten' || players[k].hand[0].rank === 'Jack' ||
-    players[k].hand[0].rank === 'Queen' || players[k].hand[0].rank === 'King') {
-    score += 10;
+  for (var i = 0; i < handSize; i++) {
+    for (var j = 0; j < players.length; j++) {
+      cardPull = _.random($shuffledDeck.length - 1);
+      pulledCard = $shuffledDeck[cardPull];
+      players[j].hand.push(pulledCard);
+      $shuffledDeck.splice(cardPull, 1);
+    }
   }
-  players[k].score += score;
-  score = 0;
-}
 
-for (var m = 0; m < players.length; m++) {
-  if (players[m].hand[1].rank === 'Ace') {
-    score += 11;
-  } else if (players[m].hand[1].rank === 'Two') {
-    score += 2;
-  } else if (players[m].hand[1].rank === 'Three') {
-    score += 3;
-  } else if (players[m].hand[1].rank === 'Four') {
-    score += 4;
-  } else if (players[m].hand[1].rank === 'Five') {
-    score += 5;
-  } else if (players[m].hand[1].rank === 'Six') {
-    score += 6;
-  } else if (players[m].hand[1].rank === 'Seven') {
-    score += 7;
-  } else if (players[m].hand[1].rank === 'Eight') {
-    score += 8;
-  } else if (players[m].hand[1].rank === 'Nine') {
-    score += 9;
-  } else if (players[m].hand[1].rank === 'Ten' || players[m].hand[1].rank === 'Jack' ||
-    players[m].hand[1].rank === 'Queen' || players[m].hand[1].rank === 'King') {
-    score += 10;
+  for (var k = 0; k < players.length; k++) {
+    for (var p = 0; p < handSize; p++) {
+      if (players[k].hand[p].rank === 'Ace') {
+        score += 11;
+      } else if (players[k].hand[p].rank === 'Two') {
+        score += 2;
+      } else if (players[k].hand[p].rank === 'Three') {
+        score += 3;
+      } else if (players[k].hand[p].rank === 'Four') {
+        score += 4;
+      } else if (players[k].hand[p].rank === 'Five') {
+        score += 5;
+      } else if (players[k].hand[p].rank === 'Six') {
+        score += 6;
+      } else if (players[k].hand[p].rank === 'Seven') {
+        score += 7;
+      } else if (players[k].hand[p].rank === 'Eight') {
+        score += 8;
+      } else if (players[k].hand[p].rank === 'Nine') {
+        score += 9;
+      } else if (players[k].hand[p].rank === 'Ten' || players[k].hand[p].rank === 'Jack' ||
+      players[k].hand[p].rank === 'Queen' || players[k].hand[p].rank === 'King') {
+        score += 10;
+      }
+      players[k].score += score;
+      score = 0;
+      console.log('Current Score', players[k].name, players[k].score);
+    }
   }
-  players[m].score += score;
-  score = 0;
-}
 
-var winner = 0;
+  for (var h = 0; h < players.length; h++) {
+    for (var o = 0; o < players.length; o++) {
+      if (h !== o && players[h].score >= players[o].score && players[h].score > highestScore) {
+        highestScore = players[h].score;
+      }
+    }
+  }
 
-for (var n = 1; n < players.length; n++) {
-  if (players[n].score >= players[0].score && players[n].score >= players[1].score &&
-    players[n].score >= players[2].score && players[n].score >= players[3].score) {
-    winner = n;
+  for (var q = 0; q < players.length; q++) {
+    for (var y = 0; y < players.length; y++) {
+      if (q !== y && players[q].score === players[y].score && players[q].score === highestScore &&
+        ties.includes(q) !== true) {
+        tiebreaker = true;
+        ties.push(q);
+      }
+    }
+  }
+
+  if (tiebreaker === true) {
+    console.log('Tiebreaker!');
+    for (var x = 0; x < ties.length; x++) {
+      console.log('tie index:', ties[x]);
+      tiedPlayers.push(players[ties[x]]);
+      console.log(players[ties[x]].name, players[ties[x]].score);
+    }
+    tiebreaker = false;
+    for (var z = 0; z < tiedPlayers.length; z++) {
+      newList[z] = {
+        name: tiedPlayers[z].name,
+        hand: [],
+        score: 0
+      };
+    }
+    console.log(newList);
+    console.log('Tied Players', tiedPlayers);
+    playGame(newList, handSize);
+  } else {
+    for (var m = 0; m < players.length; m++) {
+      for (var n = 0; n < players.length; n++) {
+        if (m !== n && players[m].score > players[n].score && players[m].score === highestScore) {
+          winner = m;
+        }
+      }
+    }
+    console.log('Winner:', players[winner]);
+    return players[winner];
   }
 }
 
-console.log('Winner:', players[winner]);
+playGame(playerList, 1);
