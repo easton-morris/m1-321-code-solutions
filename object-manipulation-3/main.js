@@ -306,7 +306,6 @@ function playGame(players, handSize) {
   if (tiebreaker === true) {
     console.log('Tiebreaker!');
     for (var x = 0; x < ties.length; x++) {
-      console.log('tie index:', ties[x]);
       tiedPlayers.push(players[ties[x]]);
       console.log(players[ties[x]].name, players[ties[x]].score);
     }
@@ -318,8 +317,7 @@ function playGame(players, handSize) {
         score: 0
       };
     }
-    console.log(newList);
-    console.log('Tied Players', tiedPlayers);
+    console.log('New Game!');
     playGame(newList, handSize);
   } else {
     for (var m = 0; m < players.length; m++) {
@@ -330,7 +328,6 @@ function playGame(players, handSize) {
       }
     }
     console.log('Winner:', players[winner]);
-    return players[winner];
   }
 }
 
