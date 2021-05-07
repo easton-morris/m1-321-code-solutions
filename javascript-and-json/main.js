@@ -26,6 +26,6 @@ var student = '{"student":[{"id": 456,"name": "James Halliday"}]}';
 
 console.log('Future Object in JSON', student, typeof student);
 
-var JSONobject = JSON.parse(student);
+var objectJSON = JSON.parse(student);
 
-console.log('JSON as object:', JSONobject, typeof JSONobject);
+console.log('JSON as object:', objectJSON, typeof objectJSON);
