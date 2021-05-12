@@ -55,6 +55,6 @@ console.log('book3:', book3);
 console.log('book4:', book4);
 console.log('book5:', book5);
 
-const book6 = library[3];
+const { 3: book6 } = library;
 
 console.log('book6:', book6);
